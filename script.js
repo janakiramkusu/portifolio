@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const formData = { name, email, message, rating: selectedRating };
 
         try {
-            const response = await fetch("http://localhost:5000/submit-review", {
+            const response = await fetch("https://portifolio-cjuq.onrender.com/submit-review", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)
