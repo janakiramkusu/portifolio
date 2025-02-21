@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Janakiram Kusu - Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="logo.jpg">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <div id="preloader">
@@ -131,6 +133,16 @@
             <li><a href="udemy.pdf" target="_blank">Udemy Full-Stack Web Development Certificate</a></li>
         </ul>
     </section>
+
+    <section id="socials" class="fade-in slide-up">
+        <h2>Connect With Me</h2>
+        <ul>
+            <li>GitHub: <a href="https://github.com/janakiramkusu" target="_blank">github.com/janakiramkusu</a></li>
+            <li>LinkedIn: <a href="https://in.linkedin.com/in/kusu-janakiram-361277217" target="_blank">linkedin.com/in/kusu-janakiram</a></li>
+            <li>CodeChef: <a href="https://www.codechef.com/users/kusujanakiram" target="_blank">codechef.com/kusujanakiram</a></li>
+            <li>Leetcode: <a href="https://leetcode.com/u/JanakiramKusu/" target="_blank">Leetcode.com/janakiram_kusu</a></li>
+        </ul>
+    </section>
     
     <section id="strengths" class="fade-in slide-up">
         <h2>Strengths & Weaknesses</h2>
@@ -182,10 +194,23 @@
             </div>
             <input type="hidden" id="rating" name="rating" value="0"> <!-- Hidden field for rating -->
             <p id="rating-text">Click on the stars to rate!</p>
-    
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Submitting...</p>
+            </div>
             <button type="submit" id="submit-rating">Submit Rating</button>
         </form>
     </section>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Kusu Janakiram | All Rights Reserved</p>
+            <nav>
+                <a href="#about">About</a> |
+                <a href="#projects">Projects</a> |
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </footer>
     
     
     <script src="script.js"></script>
