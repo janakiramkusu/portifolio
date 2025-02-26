@@ -8,100 +8,207 @@ body {
     transition: background 0.5s ease-in-out;
 }
 
-/* Header */
-header {
-    background: linear-gradient(45deg, rgb(65, 105, 225), #5a81d4);
+/* ---------------- Header Styling ---------------- */
+/* Remove default margin & padding from body */
+ html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure the header container takes full width */
+
+.header-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0%;
+    left: 46%;
+    transform: translateX(-50%);
     color: white;
-    padding: 20px;
+    font-family: 'Courier New', monospace;
+    padding: 10px 20px;
+    border-radius: 8px;
+    max-width: 60%;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
 }
 
-header:hover {
-    transform: scale(1.02);
+.code-snippet {
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    color: #ffffff;
+    text-shadow: #333;
+    text-decoration: solid;
+    padding: 15px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    max-width: 100%;
+    margin-top: 0;
+    padding-top: 0;
 }
 
-/* ---------------- Fix Navbar & Header Positioning ---------------- */
-header {
-    text-align: center;
-    padding: 20px 0;
-}
-
-/* Fix header title positioning */
-header h1 {
-    font-size: 26px;
+/* Play Button Style */
+.play-button {
+    width: 50px;
+    height: 50px;
+    background-color: #28a745; /* Green */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    color: white;
     font-weight: bold;
-    margin-bottom: 10px;
+    transition: transform 0.2s ease-in-out, background 0.3s ease;
+    padding: top 0; ;
 }
 
+/* Pulsating Animation */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Apply Animation Until Clicked */
+.play-button.pulsate {
+    animation: pulse 1s infinite;
+}
+
+/* Remove Animation and Change Style on Click */
+.play-button.clicked {
+    animation: none !important; /* Ensure animation stops */
+}
+
+/* Output text style */
+#output-text {
+    display: none;
+    font-size: 18px;
+    color: black;
+    margin-top: 10px;
+}
+
+.play-button:hover {
+    background: #218838;
+    transform: scale(1.1);
+}
+.overlay, .play-button {
+    display: block;
+}
+
+/* Hide overlay and play button on smaller screens */
+@media (max-width: 1450px) {
+    .overlay, .play-button {
+        display: none;
+    }
+    #output-text {
+        display: none;
+    }
+}
+@media (max-width: 1420px) {
+    .header-image {
+        content: url('./assets/singleHeader1.jpg');
+
+    }
+}
 /* ---------------- Navbar Styling ---------------- */
+/* Increase Navbar Size */
 nav {
-    background: royalblue; /* Keep your existing navbar color */
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
+    background: royalblue;
+    padding: 15px 0; /* Increased padding */
     width: 100%;
-    z-index: 1000;
+    z-index: 1001;
 }
 
-/* Center and space navbar items */
+/* Adjust Navbar Links */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
 }
 
-/* Navbar Items */
 nav ul li {
     display: inline;
 }
 
-/* Navbar Links */
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 18px;
+    font-size: 20px; /* Increased font size */
     font-weight: bold;
-    padding: 10px 15px;
+    padding: 15px 20px; /* Increased padding */
     transition: all 0.3s ease-in-out;
 }
 
-/* Hover Effects */
 nav ul li a:hover {
     text-decoration: underline;
     transform: scale(1.1);
 }
 
-/* ---------------- Responsive Navbar for Mobile ---------------- */
+/* Responsive Design */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
 @media screen and (max-width: 768px) {
     nav ul {
-        flex-direction: column;
-        background: rgba(0, 0, 0, 0.8);
-        position: absolute;
-        top: 55px;
-        left: 0;
-        width: 100%;
         display: none;
-        padding: 15px 0;
+        flex-direction: column;
+        width: 100%;
+        background: royalblue;
+        position: absolute;
+        top: 100%; /* Keeps it below the navbar */
+        left: 0;
+        text-align: center;
     }
 
-    nav ul.active {
+    nav ul li {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    .nav-active {
         display: flex;
     }
 }
+
+
+/* ---------------- Smooth Scrolling Fix ---------------- */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px; /* Adjust based on your header height */
+    scroll-padding-top: 70px; /* Adjust for navbar height */
 }
-
 
 
 /* Sections */
@@ -129,11 +236,6 @@ section::before {
 section:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Fix body layout so content isn't hidden under fixed header */
-body {
-    padding-top: 80px;
 }
 
 /* Project Cards */
@@ -265,7 +367,7 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: white;
+    background: rgba(255, 255, 255, 0.086) ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -273,14 +375,7 @@ body {
     transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
 }
 
-.loader {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #007BFF;
-    border-top: 5px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
+
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
@@ -372,11 +467,6 @@ section {
     padding: 25px;
 }
 
-/* Adjust Header Width */
-header, nav {
-    max-width: 100%;
-    padding: 15px 40px; /* Ensures enough spacing but not too much */
-}
 
 /* Reduce Excess Side Space on Larger Screens */
 @media (min-width: 1200px) {
@@ -393,9 +483,7 @@ header, nav {
     }
 }
 /* Ensure content is not hidden under the fixed header */
-body {
-    padding-top: 100px; /* Adjust according to header height */
-}
+
 
 /* Alternatively, adjust the first section directly */
 section:first-of-type {
@@ -465,20 +553,7 @@ footer nav a:hover {
     display: none;
 }
 
-#loading {
-    text-align: center;
-    margin-top: 10px;
-}
 
-.spinner {
-    width: 25px;
-    height: 25px;
-    border: 3px solid rgba(0, 0, 0, 0.3);
-    border-top: 3px solid #007bff;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: auto;
-}
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
@@ -492,5 +567,27 @@ footer nav a:hover {
 body {
     scrollbar-width: none;  
     -ms-overflow-style: none;  
+}
+
+/* Position the output text inside the banner */
+#output-text {
+    position: absolute;
+    bottom: 1px; /* Adjust to fit in the white space */
+    left: 62.5%;
+    top: 85%;
+    transform: translateX(-50%);
+    color: black;
+    font-size: 23px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    background-color :color;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow:  rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    text-decoration: solid;
+    display: none;
+    padding-top: 1.5%;
 }
 

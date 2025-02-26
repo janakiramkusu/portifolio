@@ -172,3 +172,40 @@ document.addEventListener("DOMContentLoaded", () => {
         submitButton.textContent = "Submit Rating";
     });
 });
+function runCode(button) {
+    // Stop animation on first click
+    button.classList.remove("pulsate");
+    button.style.animation = "none"; // Fully stop animation
+
+    let outputText = document.getElementById("output-text");
+
+    // Toggle Play/Pause
+    if (button.innerText === "▶") {
+        button.innerText = "||"; // Change to Pause icon
+        button.style.background = "#dc3545"; // Change color to red for "Pause"
+
+        // Show the output text dynamically
+        outputText.style.display = "block";
+
+        // After 3 seconds, revert back to Play icon
+        setTimeout(() => {
+            button.innerText = "▶"; // Change back to Play icon
+            button.style.background = "#28a745"; // Restore green color
+
+            // Hide the output text again
+            
+        }, 3000);
+    } else {
+        button.innerText = "▶"; // Revert to Play icon
+        button.style.background = "#28a745"; // Restore green color
+         
+        
+    }
+}
+
+// Mobile Navbar Toggle Function (Keep it unchanged)
+document.querySelector('.menu-toggle').addEventListener('click', function () {
+    document.querySelector('nav ul').classList.toggle('nav-active');
+});
+
+
