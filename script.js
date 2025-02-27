@@ -218,9 +218,12 @@ document.querySelectorAll('.nav-link').forEach(anchor => {
             const navbarHeight = document.querySelector('nav').offsetHeight; // Get navbar height
             
             window.scrollTo({
-                top: targetElement.offsetTop - navbarHeight - 20, // Adjust offset
+                top: targetElement.offsetTop - navbarHeight - 10, // Adjust offset
                 behavior: 'smooth'
             });
         }
+
+        // Close mobile menu if open
+        document.querySelector('nav ul').classList.remove('nav-active');
     });
 });
