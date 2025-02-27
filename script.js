@@ -204,8 +204,23 @@ function runCode(button) {
 }
 
 // Mobile Navbar Toggle Function (Keep it unchanged)
-document.querySelector('.menu-toggle').addEventListener('click', function () {
-    document.querySelector('nav ul').classList.toggle('nav-active');
+document.querySelector(".menu-toggle").addEventListener("click", function () {
+    document.querySelector("#nav-links").classList.toggle("nav-active");
 });
 
+document.querySelectorAll('.nav-link').forEach(anchor => {
+    anchor.addEventListener('click', function(event) {
+        event.preventDefault(); // Stop default anchor jump
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
 
+        if (targetElement) {
+            const navbarHeight = document.querySelector('nav').offsetHeight; // Get navbar height
+            
+            window.scrollTo({
+                top: targetElement.offsetTop - navbarHeight - 20, // Adjust offset
+                behavior: 'smooth'
+            });
+        }
+    });
+});

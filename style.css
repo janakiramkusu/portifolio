@@ -131,12 +131,14 @@ body {
 /* Increase Navbar Size */
 nav {
     background: royalblue;
-    padding: 15px 0; /* Increased padding */
+    padding: 15px 0;
     width: 100%;
     z-index: 1001;
+    position: sticky;
+    top: 0;
 }
 
-/* Adjust Navbar Links */
+/* Navbar Links */
 nav ul {
     list-style: none;
     padding: 0;
@@ -153,9 +155,9 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 20px; /* Increased font size */
+    font-size: 20px;
     font-weight: bold;
-    padding: 15px 20px; /* Increased padding */
+    padding: 15px 20px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -164,26 +166,40 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-/* Responsive Design */
+/* Mobile Menu */
 .menu-toggle {
     display: none;
-    font-size: 24px;
+    font-size: 30px;
     color: white;
     cursor: pointer;
     background: none;
     border: none;
+    padding: 10px;
 }
 
+/* Responsive Styles */
 @media screen and (max-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
     nav ul {
         display: none;
         flex-direction: column;
         width: 100%;
         background: royalblue;
         position: absolute;
-        top: 100%; /* Keeps it below the navbar */
+        top: 60px;
         left: 0;
         text-align: center;
+        padding: 10px 0;
     }
 
     nav ul li {
@@ -191,14 +207,7 @@ nav ul li a:hover {
         padding: 10px 0;
     }
 
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-    }
-
-    .nav-active {
+    nav ul.nav-active {
         display: flex;
     }
 }
@@ -589,5 +598,10 @@ body {
     text-decoration: solid;
     display: none;
     padding-top: 1.5%;
+}
+
+html {
+    scroll-padding-top: 80x; /* Adjust this value to match your navbar height */
+    scroll-behavior: smooth;
 }
 
