@@ -32,7 +32,7 @@ body {
 .overlay {
     position: absolute;
     top: 0%;
-    left: 46%;
+    left: 48%;
     transform: translateX(-50%);
     color: white;
     font-family: 'Courier New', monospace;
