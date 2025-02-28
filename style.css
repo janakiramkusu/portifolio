@@ -176,6 +176,35 @@ nav ul li a:hover {
     border: none;
     padding: 10px;
 }
+/* Navbar Text Animation */
+.nav-link {
+    position: relative;
+    color: #ffffff; /* Keeps the default color */
+    text-decoration: none;
+    overflow: hidden;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: rgb(254, 254, 254); /* A subtle golden-yellow underline */
+    left: 0;
+    bottom: -2px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #ffffff; /* Golden Yellow on Hover */
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
@@ -482,11 +511,6 @@ section:first-of-type {
     }
 }
 
-.loading-image {
-    width: 100px; /* Adjust size as needed */
-    height: 100px;
-    animation: spin 5s linear infinite; /* Rotate continuously */
-}
 .education-item {
     background: #f8f9fa;
     padding: 15px;
@@ -583,4 +607,154 @@ html {
 section {
     scroll-margin-top: 80px; /* Adjust this value to match your navbar height */
 }
-   
+   /* Typing Effect */
+#typing-text::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+    color: #1E3A8A; /* Keep it blue for consistency */
+}
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Hover Effect */
+.hover-effect {
+    transition: color 0.3s ease-in-out;
+}
+.hover-effect:hover {
+    color: #1E3A8A; /* A subtle, deep red for contrast */
+    font-weight: bold;
+}
+
+/* Fade & Slide Animations */
+.fade-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Highlight (Minimal & Clean) */
+/* Highlight (Elegant Golden Yellow) */
+.highlight {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    color: #1E3A8A; /* Professional Blue */
+}
+.highlight::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Thin for subtlety */
+    background: rgba(255, 195, 0, 0.7); /* Soft golden yellow */
+    left: 0;
+    bottom: -2px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out, opacity 0.3s;
+    opacity: 0.8; /* Lighter visibility */
+}
+.highlight.show::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+
+/* Button Styling */
+.button {
+    background: #1E3A8A; /* Professional Blue */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+.button:hover {
+    background: #E63946; /* Subtle Red Accent */
+    transform: scale(1.05);
+}
+
+/* Underline Animation for Links */
+a {
+    color: #1E3A8A;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #E63946; /* Underline in deep red */
+    left: 0;
+    bottom: -3px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+a:hover {
+    color: #E63946;
+}
+a:hover::after {
+    transform: scaleX(1);
+}
+/* Fullscreen Preloader */
+/* Fullscreen Preloader */
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+/* Centered Loader Container */
+.preloader-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo (Fixed, No Rotation) */
+/* Logo stays fixed at the center */
+.loading-image {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    z-index: 2;
+    animation: none; /* Prevent rotation */
+}
+
+/* Sleek Spinner (Only Blue) */
+.spinner {
+    width: 80px;
+    height: 80px;
+    border: 4px solid transparent;
+    border-top: 4px solid #007bff; /* Only blue for a clean look */
+    border-radius: 50%;
+    position: absolute;
+    animation: spin 1s linear infinite;
+}
+
+/* Smooth Spin Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hide Preloader */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}

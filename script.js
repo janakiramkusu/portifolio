@@ -1,13 +1,14 @@
-// Preloader fade-out on page load
+// Preloader fade-out with smooth animation
 window.addEventListener("load", () => {
     const preloader = document.getElementById("preloader");
     if (preloader) {
-        preloader.classList.add("hidden");
+        preloader.classList.add("fade-out"); 
         setTimeout(() => {
             preloader.style.display = "none";
-        }, 500);
+        }, 800); // Slightly longer for a smooth effect
     }
 });
+
 // Star Rating Logic
 document.addEventListener("DOMContentLoaded", () => {
     const stars = document.querySelectorAll(".star");
@@ -226,3 +227,60 @@ document.querySelectorAll('.nav-link').forEach(anchor => {
         document.querySelector('nav ul').classList.remove('nav-active');
     });
 });
+// Prevent re-triggering for About Me
+let aboutTyped = false;
+
+// Function to apply typing effect
+function typeEffect(element) {
+    let text = element.getAttribute("data-text");
+    if (!text) return; // Prevent errors if data-text is missing
+
+    let index = 0;
+    function typing() {
+        element.innerHTML = text.substring(0, index + 1); // Ensures proper order
+        index++;
+
+        if (index < text.length) {
+            setTimeout(typing, 50);
+        }
+    }
+    typing();
+}
+
+
+// Scroll event to trigger animations
+function handleScroll() {
+    let aboutSection = document.getElementById("about");
+    let aboutText = document.querySelector("#about .typing");
+
+    if (aboutSection) {
+        let pos = aboutSection.getBoundingClientRect().top;
+        let winHeight = window.innerHeight;
+
+        if (pos < winHeight - 50 && !aboutTyped) {
+            aboutTyped = true; // Prevent retriggering
+            typeEffect(aboutText);
+        }
+    }
+
+    // Typing effect for project titles (if in view)
+    document.querySelectorAll(".typing").forEach((el) => {
+        let pos = el.getBoundingClientRect().top;
+        let winHeight = window.innerHeight;
+        if (pos < winHeight - 50 && !el.classList.contains("typed")) {
+            el.classList.add("typed");
+            typeEffect(el);
+        }
+    });
+
+    // Fade-in effect for highlighted elements
+    document.querySelectorAll(".highlight").forEach((el) => {
+        let pos = el.getBoundingClientRect().top;
+        if (pos < window.innerHeight - 50) {
+            el.classList.add("show");
+        }
+    });
+}
+
+// Attach scroll event listener
+window.addEventListener("scroll", handleScroll);

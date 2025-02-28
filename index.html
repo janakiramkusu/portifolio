@@ -3,67 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Janakiram Kusu - Portfolio</title>
+    <title>Janakiram Kusu's - Portfolio</title>
     <link rel="icon" type="image/x-icon" href="logo.jpg">
     <link rel="stylesheet" href="style.css">
-    <style>
-         /* Fullscreen Preloader */
-         #preloader {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-        }
-
-        /* Centered Loader Container */
-        .preloader-container {
-            position: relative;
-            width: 150px; /* Larger overall container */
-            height: 150px;
-        }
-
-        /* Small Logo in the Center */
-        .loading-image {
-            width: 50px; /* Keeps logo small */
-            height: 50px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            z-index: 2;
-        
-
-        }
-
-        /* Larger Spinning Circle */
-        .spinner {
-            width: 60px; /* Increased size */
-            height: 60px;
-            border: 3px solid rgba(0, 0, 0, 0.1); /* Thin, clean border */
-            border-top: 3px solid #007bff; /* Modern blue */
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: spin 0.5s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        /* Hide Preloader */
-        .hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-    </style>
+   
 </head>
 <body>
     <div id="preloader">
@@ -72,7 +15,6 @@
             <div class="spinner"></div>
         </div>
     </div>
-
     
     <header class="header-container">
         <img src="./assets/singleHeader.jpg" alt="Header Image" class="header-image">
@@ -109,63 +51,64 @@
         </ul>
     </nav>
     
-    <section id="about" class="fade-in slide-up" >
-        <h2>About Me</h2>
-        <h3>Hi, I'm <strong>Kusu Bala Veeravenkata Satya Sai Janakiram</strong> 👋</h3>
+    <section id="about">
+        <h2>👋 About Me</h2>
+        <h3>Hi, I'm <strong><span class="typing" data-text="Kusu Bala Veeravenkata Satya Sai Janakiram"></span></strong></h3>
         <p>
-            A <strong>3rd-year Computer Science student</strong> with expertise in 
-            <strong>Python, Java, JavaScript, SQL, MongoDB, and web technologies</strong>. 
-            Passionate about <strong>building scalable web applications</strong> and solving complex problems, 
-            I strive to <strong>learn, innovate, and grow</strong> in a dynamic development environment.
+            A <strong>3rd-year Computer Science student</strong> passionate about 
+            <span class="hover-effect">building scalable web applications</span> and solving complex problems.
         </p>
     
         <h4>💡 What Drives Me?</h4>
         <ul>
-            <li>Creating <strong>dynamic, user-friendly web applications</strong> that make an impact.</li>
-            <li>Writing <strong>clean, maintainable, and efficient code</strong>.</li>
-            <li>Exploring <strong>cutting-edge full-stack technologies</strong>.</li>
-            <li>Collaborating with teams to <strong>turn ideas into reality</strong>.</li>
+            <li>Creating <span class="highlight">Intuitive, User Friendly Applications</span> that make an impact.</li>
+            <li>Writing <span class="hover-effect">Clean, Efficient, and Maintainable Code</span>.</li>
+            <li>Exploring <span class="highlight">Cutting Edge Full Stack Technologies</span>.</li>
+            <li>Turning <span class="hover-effect">Ideas Into Reality</span> through collaboration.</li>
         </ul>
     
         <h4>🎯 What I'm Looking For?</h4>
         <p>
-            I'm eager to apply my skills in a <strong>fast-paced, innovative environment</strong>, 
-            where I can <strong>contribute meaningfully, learn from industry experts,</strong> 
-            and evolve into a well-rounded software developer.
+            Seeking an opportunity in a <span class="highlight">Fast Paced, Innovative Environment</span>, 
+            where I can <span class="hover-effect">Contribute, Learn, and Grow</span> as a software developer.
         </p>
     </section>
     
-        <section id="projects" class="fade-in slide-up">
-            <h2>🚀 Projects</h2>
-        
-            <div class="project hover-scale">
-                <h3>📌 Rastha - Restaurant Management System</h3>
-                <ul>
-                    <li>Built using the <strong>MERN stack</strong> (MongoDB, Express, React, Node.js).</li>
-                    <li>Provides a platform for restaurant owners to manage their restaurant details and products.</li>
-                    <li>Users can view available restaurants and their products.</li>
-                </ul>
-                <p>🔗 <a href="https://github.com/janakiramkusu/MERN-Rastha" target="_blank">GitHub Repository</a></p>
-            </div>
-        
-            <div class="project hover-scale">
-                <h3>📌 Task Manager App <span>(Nov 2024 - Dec 2025)</span></h3>
-                <ul>
-                    <li>Developed a simple task manager application using <strong>Node.js, MongoDB, and React.js</strong>.</li>
-                    <li>Features include task creation, editing, deletion, and status updates (completed/pending).</li>
-                    <li>Implemented a RESTful API for seamless backend communication and MongoDB for data storage.</li>
-                </ul>
-                <p>🔗 <a href="https://github.com/janakiramkusu/Todo-List" target="_blank">GitHub Repository</a></p>
-            </div>
-        
-            <div class="project hover-scale">
-                <h3>📌 Realtime Translator (Ongoing)</h3>
-                <ul>
-                    <li>A real-time translation system that enables conversations between two people speaking different languages.</li>
-                    <li>Uses AI-powered translation APIs for seamless multilingual communication.</li>
-                </ul>
-            </div>
-        </section>
+    
+    <section id="projects">
+        <h2>🚀 Projects</h2>
+    
+        <div class="project">
+            <h3><span class="typing" data-text="📌 Rastha - Restaurant Management System (Jan 2025 - Feb 2025)"></span></h3>
+            <ul>
+                <li>Developed a <span class="hover-effect"> Restaurant Management Platform </span> using the <span class="highlight">MERN stack</span> (MongoDB, Express, React, Node.js).</li>
+                <li>Implemented <span class="hover-effect">JWT Authentication </span>for secure user access and data protection.</li>
+                <li>Enables restaurant owners to <span class="hover-effect">manage menus, orders, and business operations</span>.</li>
+                <li>Users can seamlessly <span class="hover-effect">browse restaurants and explore dishes</span>.</li>
+            </ul>         
+            <p>🔗 <a href="https://github.com/janakiramkusu/MERN-Rastha" target="_blank">GitHub Repository</a></p>
+        </div>
+    
+        <div class="project">
+            <h3><span class="typing" data-text="📌 Task Manager App (Nov 2024 - Dec 2024)"></span></h3>
+            <ul>
+                <li>Built a <span class ="hover-effect">Task Manager</span>  using the <span class="highlight">MERN stack</span>.</li>
+                <li>Integrated a <span class="hover-effect">RESTful API</span> for smooth data communication between frontend and backend.</li>
+                <li>Implemented core features such as <span class="hover-effect">Task Creation, Editing, Deleting, and Mark as Completed</span>.</li>
+                <li>Gained hands on experience in handling <span class="hover-effect">CORS Policies</span> to enable seamless frontend-backend connectivity.</li>
+            </ul>
+            <p>🔗 <a href="https://github.com/janakiramkusu/Todo-List" target="_blank">GitHub Repository</a></p>
+        </div>
+    
+        <div class="project">
+            <h3><span class="typing" data-text="📌 Realtime Translator (Ongoing)"></span></h3>
+            <ul>
+                <li>Developing an <span class="hover-effect">Real-Time Translation System</span>for <span class="hover-effect">multilingual communication</span>.</li>
+                <li>Leveraging <span class="highlight">NLP and AI translation APIs</span> to enable seamless, instant translations.</li>
+            </ul>
+        </div>
+    </section>
+    
         
 
     <section id="skills" class="fade-in slide-up">
@@ -204,54 +147,65 @@
     </section>
     
     <section id="certifications" class="fade-in slide-up">
-        <h2>Certifications</h2>
+        <h2>🏆 Certifications</h2>
         <ul>
-            <li><a href="https://drive.google.com/file/d/18S-NDFXLp9jI18z115KmEN5bdT2sotYo/view?usp=drivesdk" target="_blank">NPTEL Python Certificate</a></li>
-            <li><a href="https://drive.google.com/file/d/18StJI5kD6GOx3WFXdap2_0upQg3Z1Hst/view?usp=drivesdk" target="_blank">NPTEL Java Certificate</a></li>
-            <li><a href="https://drive.google.com/file/d/18SxnbA-wks48fjKP0sxwMU6K1ddc39PJ/view?usp=drivesdk" target="_blank">NPTEL DBMS Certificate</a></li>
-            <li><a href="udemy.pdf" target="_blank">Udemy Full-Stack Web Development Certificate</a></li>
+            <li>📜 <a href="https://drive.google.com/file/d/18S-NDFXLp9jI18z115KmEN5bdT2sotYo/view?usp=drivesdk" target="_blank">NPTEL Python Certificate</a></li>
+            <li>📜 <a href="https://drive.google.com/file/d/18StJI5kD6GOx3WFXdap2_0upQg3Z1Hst/view?usp=drivesdk" target="_blank">NPTEL Java Certificate</a></li>
+            <li>📜 <a href="https://drive.google.com/file/d/18SxnbA-wks48fjKP0sxwMU6K1ddc39PJ/view?usp=drivesdk" target="_blank">NPTEL DBMS Certificate</a></li>
+            <li>🎓 <a href="udemy.pdf" target="_blank">Udemy Full-Stack Web Development Certificate</a></li>
         </ul>
     </section>
-
+    
     <section id="socials" class="fade-in slide-up">
-        <h2>Connect With Me</h2>
+        <h2> Connect With Me</h2>
         <ul>
-            <li>GitHub: <a href="https://github.com/janakiramkusu" target="_blank">github.com/janakiramkusu</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/janakiramkusu/" target="_blank">linkedin.com/in/kusu-janakiram</a></li>
-            <li>CodeChef: <a href="https://www.codechef.com/users/kusujanakiram" target="_blank">codechef.com/kusujanakiram</a></li>
-            <li>Leetcode: <a href="https://leetcode.com/u/JanakiramKusu/" target="_blank">Leetcode.com/janakiram_kusu</a></li>
+            <li>💻 GitHub: <a href="https://github.com/janakiramkusu" target="_blank"><strong>@janakiramkusu</strong></a></li>
+            <li>🔗 LinkedIn: <a href="https://www.linkedin.com/in/janakiramkusu/" target="_blank"><strong>/janakiramkusu</strong></a></li>
+            <li>🥇 CodeChef: <a href="https://www.codechef.com/users/kusujanakiram" target="_blank"><strong>@kusujanakiram</strong></a></li>
+            <li>📊 Leetcode: <a href="https://leetcode.com/u/JanakiramKusu/" target="_blank"><strong>@janakiram_kusu</strong></a></li>
         </ul>
     </section>
     
     <section id="strengths" class="fade-in slide-up">
-        <h2>Strengths & Weaknesses</h2>
-        <p><strong>Strengths:</strong></p>
-        <ul>
-            <li>Innovative thinker</li>
-            <li>Self-motivated</li>
-            <li>Adaptable</li>
-        </ul>
-        <p><strong>Weaknesses:</strong></p>
-        <ul>
-            <li>Overthinking</li>
-        </ul>
+        <h2> Strengths & Weaknesses</h2>
+        <div class="columns">
+            <div>
+                <h3>✅ Strengths</h3>
+                <ul>
+                    <li>Innovative thinker</li>
+                    <li>Self-motivated</li>
+                    <li>Adaptable</li>
+                </ul>
+            </div>
+            <div>
+                <h3>⚠️ Weaknesses</h3>
+                <ul>
+                    <li>Overthinking</li>
+                </ul>
+            </div>
+        </div>
     </section>
-    
     
     <section id="hobbies" class="fade-in slide-up">
-        <h2>Hobbies & Interests</h2>
+        <h2>🎭 Hobbies & Interests</h2>
         <ul>
-            <li>📜 Exploring history and geopolitics</li>
-            <li>😂 Making memes</li>
-            <li>🎬 Watching movies</li>
+            <li>🌍 I love <span class="hover-effect">exploring new things, technologies, and making experiments on them</span>. Anything that excites me be it history, geopolitics, mysteries, or cutting edge innovations keeps me curious.</li>
+            <li>😂 <span class="hover-effect">Making memes</span> is my creative escape! I enjoy adding humor to everyday life through content creation.  
+                Check out my meme page:  
+                <a href="https://www.instagram.com/janakiramkusu?igsh=MXN6OWswY25wdXUwYg==" target="_blank"><strong>@janakiramkusu</strong></a>
+            </li>
+            <li>🎥 <span class="hover-effect">Watching movies</span> – My weekends feel incomplete without a good film!</li>
         </ul>
     </section>
     
+    
+    
+    
     <section id="contact" class="fade-in slide-up">
-        <h2>Contact</h2>
-        <p>📧 Email: <a href="mailto:kusujanakiram5@gmail.com">kusujanakiram5@gmail.com</a></p>
-        <p>📞 Phone: <a href="tel:+918688781164">(+91) 8688781164</a></p>
-        <p>📍 Location: Pulugurtha, East Godavari,Andhra Pradesh - 533261.</p>
+        <h2> Contact</h2>
+        <p>📧 Email: <a href="mailto:kusujanakiram5@gmail.com"><strong>kusujanakiram5@gmail.com</strong></a></p>
+        <p>📞 Phone: <a href="tel:+918688781164"><strong>(+91) 8688781164</strong></a></p>
+        <p>📍 Location: Pulugurtha, East Godavari, Andhra Pradesh - 533261.</p>
     </section>
     
     <section id="review" class="fade-in">
@@ -277,7 +231,7 @@
                 <div class="spinner"></div>
                 <p>Submitting...</p>
             </div>
-            <p class="Note"><strong style="color: black;">Note:</strong> <span style="color: red; font-size: small;">While submitting, it takes time to load the backend. Please try again.</span></p>
+            <p class="Note"><strong style="color: black;">Note:</strong><span style="color: red; font-size: small;">If it shows '<span style="color: white; background-color: #0254ab;">Submitting...</span>', please wait. If it takes too long, try again</span></p>
             <button type="submit" id="submit-rating">Submit Rating</button>
         </form>
     </section>
@@ -291,3 +245,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+ 
