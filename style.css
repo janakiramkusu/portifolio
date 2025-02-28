@@ -121,7 +121,7 @@ body {
         display: none;
     }
 }
-@media (max-width: 1420px) {
+@media (max-width: 1449px) {
     .header-image {
         content: url('./assets/singleHeader1.jpg');
 
