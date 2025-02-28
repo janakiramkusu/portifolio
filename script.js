@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ratingInput.value = 0;
                 ratingText.textContent = "Click on the stars to rate!";
             } else {
-                alert(data.error || "Something went wrong. Please try again.");
+                console.log("Hello world!");
             }
         } catch (error) {
             console.error("Error:", error);
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ratingInput.value = 0;
                 ratingText.textContent = "Click on the stars to rate!";
             } else {
-                alert(data.error || "Something went wrong. Please try again.");
+              console.log("Error!");
             }
         } catch (error) {
             console.error("Error:", error);
