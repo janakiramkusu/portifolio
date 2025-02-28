@@ -8,7 +8,6 @@ window.addEventListener("load", () => {
         }, 500);
     }
 });
-
 // Star Rating Logic
 document.addEventListener("DOMContentLoaded", () => {
     const stars = document.querySelectorAll(".star");
