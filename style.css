@@ -774,7 +774,7 @@ h1 {
     font-weight: 600;
 }
 
-h2 {
+section h2 {
     font-size: 2rem;
     font-weight: 600;
 }
@@ -825,3 +825,5 @@ p {
     margin-bottom: 15px; /* Adds spacing between paragraphs */
     text-align: justify; /* Aligns text for a structured look */
 }
+
+
