@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         } catch (error) {
             console.error("Error:", error);
-            alert("Failed to submit. Please check your internet connection.");
+            
         }
 
         // **Reset loading state**
