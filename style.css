@@ -545,6 +545,7 @@ footer {
 
 .footer-container {
     max-width: auto;
+    text-align: center;
     margin: auto;
 }
 
