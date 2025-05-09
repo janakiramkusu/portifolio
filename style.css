@@ -618,7 +618,7 @@ section {
 }
    /* Typing Effect */
 #typing-text::after {
-    content: "...";
+    content: "";
     animation: blink 0.1s infinite;
     color: #1E3A8A; /* Keep it blue for consistency */
 }
