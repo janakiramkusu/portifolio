@@ -62,8 +62,8 @@ body {
 
 /* Play Button Style */
 .play-button {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-color: #28a745; /* Green */
     border-radius: 50%;
     display: flex;
@@ -72,12 +72,14 @@ body {
     cursor: pointer;
     border: none;
     outline: none;
-    font-size: 24px;
+    font-size: 20px; /* slightly smaller for better centering */
     color: white;
     font-weight: bold;
     transition: transform 0.2s ease-in-out, background 0.3s ease;
-    padding: top 0; ;
+    line-height: 1;
+    padding: 0; /* remove incorrect 'padding: top 0;' */
 }
+
 
 /* Pulsating Animation */
 @keyframes pulse {
@@ -131,7 +133,7 @@ body {
 /* Increase Navbar Size */
 nav {
     background: royalblue;
-    padding: 15px 0;
+    padding: 1% 0;
     width: 100%;
     z-index: 1001;
     position: sticky;
@@ -157,12 +159,12 @@ nav ul li a {
     color: white;
     font-size: 20px;
     font-weight: bold;
-    padding: 15px 20px;
+    padding: 10px 20px;
     transition: all 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #ffffff; /* Darker blue on hover */
     transform: scale(1.1);
 }
 
@@ -212,7 +214,8 @@ nav ul li a:hover {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 5px 20px;
+        padding: 0px;
+        
     }
 
     .menu-toggle {
@@ -225,7 +228,7 @@ nav ul li a:hover {
         width: 100%;
         background: royalblue;
         position: absolute;
-        top: 60px;
+        top: 59px;
         left: 0;
         text-align: center;
         padding: 10px 0;
@@ -238,6 +241,11 @@ nav ul li a:hover {
 
     nav ul.nav-active {
         display: flex;
+    }
+
+    #about{
+        margin-top: 15px;
+        padding-top: 5px;
     }
 }
 
@@ -610,8 +618,8 @@ section {
 }
    /* Typing Effect */
 #typing-text::after {
-    content: "|";
-    animation: blink 0.7s infinite;
+    content: "...";
+    animation: blink 0.1s infinite;
     color: #1E3A8A; /* Keep it blue for consistency */
 }
 @keyframes blink {
@@ -641,27 +649,19 @@ section {
 /* Highlight (Minimal & Clean) */
 /* Highlight (Elegant Golden Yellow) */
 .highlight {
-    position: relative;
     display: inline-block;
     font-weight: bold;
-    color: #1E3A8A; /* Professional Blue */
+    
+    color: #0F172A; /* Professional Blue */
+    transition: color 0.1s ease;
 }
-.highlight::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px; /* Thin for subtlety */
-    background: rgba(255, 195, 0, 0.7); /* Soft golden yellow */
-    left: 0;
-    bottom: -2px;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out, opacity 0.3s;
-    opacity: 0.8; /* Lighter visibility */
+
+.highlight:hover,
+.highlight:focus,
+.highlight:active {
+    color: #1E3A8A; /* Darker shade on interaction */
 }
-.highlight.show::after {
-    transform: scaleX(1);
-    opacity: 1;
-}
+
 
 
 /* Button Styling */
@@ -730,8 +730,8 @@ a:hover::after {
 /* Logo (Fixed, No Rotation) */
 /* Logo stays fixed at the center */
 .loading-image {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     position: absolute;
     z-index: 2;
     animation: none; /* Prevent rotation */
@@ -739,8 +739,8 @@ a:hover::after {
 
 /* Sleek Spinner (Only Blue) */
 .spinner {
-    width: 80px;
-    height: 80px;
+    width: 62px;
+    height: 62px;
     border: 4px solid transparent;
     border-top: 4px solid #007bff; /* Only blue for a clean look */
     border-radius: 50%;

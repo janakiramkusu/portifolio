@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
         preloader.classList.add("fade-out"); 
         setTimeout(() => {
             preloader.style.display = "none";
-        }, 800); // Slightly longer for a smooth effect
+        }); // Slightly longer for a smooth effect
     }
 });
 
